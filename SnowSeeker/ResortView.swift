@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct ResortView: View {
+    
+    let resort: Resort
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                Image(decorative: resort.id)
+                    .resizable()
+                    .scaledToFit()
+                
+                Group {
+                    Text(resort.description)
+                        .padding(.vertical)
+                    
+                    Text("Facilities")
+                        .font(.headline)
+                    
+                    Text(resort.facilities.joined(separator: ", "))
+                        .padding(.vertical)
+                }
+                .padding(.horizontal)
+            }
+        }
+        
     }
 }
 
