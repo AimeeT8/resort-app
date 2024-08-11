@@ -18,6 +18,13 @@ struct ResortView: View {
                     .resizable()
                     .scaledToFit()
                 
+                HStack {
+                    ResortDetailsView(resort: resort)
+                    SkiDetailsView(resort: resort)
+                }
+                .padding(.vertical)
+                .background(.primary.opacity(0.1))
+                
                 Group {
                     Text(resort.description)
                         .padding(.vertical)
