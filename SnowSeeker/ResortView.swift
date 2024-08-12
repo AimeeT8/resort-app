@@ -24,6 +24,9 @@ struct ResortView: View {
                     if horizontalSizeClass == .compact {
                         VStack(spacing: 10) { ResortDetailsView(resort: resort) }
                         VStack(spacing: 10) { SkiDetailsView(resort: resort) }
+                    } else {
+                        ResortDetailsView(resort: resort)
+                        SkiDetailsView(resort: resort)
                     }
                     
                     
