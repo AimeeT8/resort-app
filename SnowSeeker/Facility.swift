@@ -45,6 +45,16 @@ struct Facility: Identifiable {
         }
     }
     
+    var description: String {
+        
+        if let message = descriptions[name] {
+            message
+        } else {
+            fatalError("Unknown facility type: \(name)")
+        }
+        
+    }
+    
     
 }
 
