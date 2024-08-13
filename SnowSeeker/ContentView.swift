@@ -11,6 +11,8 @@ struct ContentView: View {
     
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
     
+    
+    @State private var favorites = Favorites()
     @State private var searchText = ""
     
     var filteredResorts: [Resort] {
@@ -53,6 +55,7 @@ struct ContentView: View {
         } detail: {
             WelcomeView()
         }
+        .environment(favorites)
     }
 }
 
