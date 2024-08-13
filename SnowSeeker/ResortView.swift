@@ -69,6 +69,8 @@ struct ResortView: View {
                         favorites.add(resort)
                     }
                 }
+                .buttonStyle(.borderedProminent)
+                .padding()
             }
         }
         .navigationTitle("\(resort.name), \(resort.country)")
