@@ -38,6 +38,8 @@ struct ResortView: View {
                 }
                 .padding(.vertical)
                 .background(.primary.opacity(0.1))
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+                
                 
                 Group {
                     Text(resort.description)
