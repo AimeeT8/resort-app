@@ -20,7 +20,7 @@ struct ContentView: View {
     
     @State private var favorites = Favorites()
     @State private var searchText = ""
-    @State private var SOrtType = SortType.default
+    @State private var sortType = SortType.default
     @State private var showingSortOptions = false
     
     var filteredResorts: [Resort] {
@@ -72,6 +72,11 @@ struct ContentView: View {
                 Button("Change sort order", systemImage: "arrow.up.arrow.down") {
                     showingSortOptions = true
                 }
+            }
+            .confirmationDialog("Sort ORder", isPresented: $showingSortOptions) {
+                Button("Default") { sortType = .default }
+                Button("Alphabetical") { sortType = .alphabetical }
+                Button("By Country") {sortType = .country }
             }
         } detail: {
             WelcomeView()
