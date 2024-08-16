@@ -30,6 +30,17 @@ struct ContentView: View {
             resorts.filter { $0.name.localizedStandardContains(searchText) }
         }
     }
+    
+    var sortedResults: [Resort] {
+        switch sortType {
+        case .default:
+            filteredResorts
+        case .alphabetical:
+            filteredResorts.sorted { $0.name < $1.name }
+        case .country:
+            filteredResorts.sorted { $0.country < $1.country }
+        }
+    }
 
     
     var body: some View {
