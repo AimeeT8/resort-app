@@ -29,6 +29,7 @@ struct ResortView: View {
                         .padding(10)
                         .background(.black.opacity(0.7))
                         .foregroundStyle(.white)
+                        .offset(x: -5, y: -5)
                 }
                 
                 HStack {
