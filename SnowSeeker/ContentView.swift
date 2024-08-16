@@ -20,6 +20,8 @@ struct ContentView: View {
     
     @State private var favorites = Favorites()
     @State private var searchText = ""
+    @State private var SOrtType = SortType.default
+    @State private var showingSortOptions = false
     
     var filteredResorts: [Resort] {
         if searchText.isEmpty {
@@ -66,6 +68,11 @@ struct ContentView: View {
                 
             }
             .searchable(text: $searchText, prompt: "Search for a resort")
+            .toolbar {
+                Button("Change sort order", systemImage: "arrow.up.arrow.down") {
+                    showingSortOptions = true
+                }
+            }
         } detail: {
             WelcomeView()
         }
