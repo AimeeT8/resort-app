@@ -22,7 +22,7 @@ struct ContentView: View {
             resorts.filter { $0.name.localizedStandardContains(searchText) }
         }
     }
-    
+
     
     var body: some View {
         NavigationSplitView {
