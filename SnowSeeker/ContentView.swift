@@ -45,7 +45,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationSplitView {
-            List(filteredResorts) { resort in
+            List(sortedResults) { resort in
                 NavigationLink(value: resort) {
                     HStack {
                         Image(resort.country)
