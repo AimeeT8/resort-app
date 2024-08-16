@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+
+enum SortType {
+    // default is a keyword in swift and needs backticks to let swift know its a category for the search bar and not the keyword:
+    case `default`, alphabetical, country
+}
+
 struct ContentView: View {
     
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
